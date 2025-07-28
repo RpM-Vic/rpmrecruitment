@@ -1,11 +1,12 @@
 import { useState} from 'react';
 import { Field } from '../components/Field';
 import { Foreplay } from '../businessLogic/Foreplay';
-import { Idata, initialdata } from '../businessLogic/InitialData';
+import { initialdata } from '../businessLogic/InitialData';
 import { Loader } from '../components/loader/Loader';
+import { FormData } from '../interfaces';
 
 export const RecruitmentForm = () => {
-  const [data, setData] = useState<Idata[]>(initialdata);
+  const [data, setData] = useState<FormData[]>(initialdata);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [serverResponse, setServerResponse] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
