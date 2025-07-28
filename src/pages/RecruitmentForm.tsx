@@ -4,7 +4,7 @@ import { Foreplay } from '../businessLogic/Foreplay';
 import { Idata, initialdata } from '../businessLogic/InitialData';
 import { Loader } from '../components/loader/Loader';
 
-export const Form = () => {
+export const RecruitmentForm = () => {
   const [data, setData] = useState<Idata[]>(initialdata);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [serverResponse, setServerResponse] = useState<string>("");
@@ -78,7 +78,7 @@ export const Form = () => {
           />
         ))}
         <button
-          className={`bg-amber-600 border rounded-2xl flex justify-center items-center p-6 hover:bg-amber-100 transition-colors ${
+          className={`bg-gray-500 text-white hover:text-black border rounded-2xl flex justify-center items-center p-6 hover:bg-gray-200 transition-colors ${
             isLoading || hasSubmitted ? 'opacity-50 cursor-not-allowed' : ''
           }`}
           onClick={handleSubmit}

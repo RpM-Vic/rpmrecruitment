@@ -1,9 +1,6 @@
-export interface Idata {
-  question: string;
-  answer: string;
-  description?: string;
-}
-export const initialdata = [
+import { FormData } from "../interfaces";
+
+export const initialdata:FormData[] = [
   { question: 'Nickname', answer: '' },
   { question: 'Discord Username', answer: '' },
   { question: 'Your primary language', answer: '' },

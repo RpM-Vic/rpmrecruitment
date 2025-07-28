@@ -1,23 +1,35 @@
 import { createBrowserRouter } from "react-router";
-import { Form } from "./pages/Form";
+import { RecruitmentForm } from "./pages/RecruitmentForm";
 import { Layout1 } from "./pages/Layout1";
 import { Dashboard } from "./pages/Dashboard";
-import { Login } from "./pages/Login";
+import { Session } from "./pages/session/page";
+import { Home } from "./pages/Home";
+import { SubmitTimeForm } from "./pages/SubmitTimeForm";
 
 export const router=createBrowserRouter([{
   path:"/",
   element:<Layout1/>,
-  errorElement:<Form/>,
+  errorElement:<Session/>,
   children:[{
     index:true,
-    element:<Form/>
+    element:<Home/>
   },
   {
     path:"/dashboard",
     element:<Dashboard/>
   },
   {
-    path:"/login",
-    element:<Login/>
-  }]
+    path:"/session",
+    element:<Session/>
+  },
+  {
+    path:"/SubmitTime",
+    element:<SubmitTimeForm/>
+  },
+    {
+    path:"/joinus",
+    element:<RecruitmentForm/>
+  },
+
+]
 }])

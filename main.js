@@ -4,7 +4,7 @@ import { pages } from "./server/pages.js"
 import cors from "cors"
 import { sendToDiscord } from './server/sendToDiscord.js';
 
-const PORT =process.env.port||5000
+const PORT =process.env.port||4000
 
 const app = express()
 
@@ -20,6 +20,41 @@ app.post('/submit',(req,res)=>{
   })
 })
 
-app.listen(PORT,()=>{
-  console.log(`server running on http://localhost:${PORT}`)
-})
+async function startServer() {
+  try {
+    // Connect to MongoDB first
+    await dbConnection();
+    
+    // Then start the Express server
+    const server= app.listen(PORT,(err)=>{
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(`Server started on http://localhost:${PORT}`);
+      }
+    });
+    // Handle graceful shutdown
+    process.on('SIGTERM', async () => {
+      console.log('SIGTERM received. Shutting down gracefully...');
+      server.close(async () => {
+        await closeDBConnection();
+        console.log('Server closed');
+        process.exit(0);
+      });
+    });
+
+    process.on('SIGINT', async () => {
+      console.log('SIGINT received. Shutting down gracefully...');
+      server.close(async () => {
+        await closeDBConnection();
+        console.log('Server closed');
+        process.exit(0);
+      });
+    });
+  } catch (error) {
+    console.error('Failed to start server:', error);
+    process.exit(1);
+  }
+}
+
+startServer();
