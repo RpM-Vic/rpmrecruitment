@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "dev2": "node --watch main.js"
+    "dev2": "node --watch main.js",
+    "start": "node main.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
