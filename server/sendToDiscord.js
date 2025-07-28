@@ -10,7 +10,7 @@ export async function sendToDiscord(data) {
 
     // Transform the data into Discord embed fields
     const embedFields = data.map(item => ({
-        name: `${item.question}${item.description ? `\n_${item.description}_` : ''}`,
+        name: item.question,
         value: item.answer || "Not provided",
         inline: item.question.length < 20 // Make shorter questions inline
     }));

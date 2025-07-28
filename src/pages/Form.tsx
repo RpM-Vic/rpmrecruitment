@@ -1,7 +1,8 @@
 import { useState} from 'react';
 import { Field } from '../components/Field';
-import { Foreplay } from '../components/Foreplay';
-import { Idata, initialdata } from '../InitialData';
+import { Foreplay } from '../businessLogic/Foreplay';
+import { Idata, initialdata } from '../businessLogic/InitialData';
+import { Loader } from '../components/loader/Loader';
 
 export const Form = () => {
   const [data, setData] = useState<Idata[]>(initialdata);
@@ -77,13 +78,14 @@ export const Form = () => {
           />
         ))}
         <button
-          className={`bg-amber-600 border rounded-2xl p-6 hover:bg-amber-100 transition-colors ${
+          className={`bg-amber-600 border rounded-2xl flex justify-center items-center p-6 hover:bg-amber-100 transition-colors ${
             isLoading || hasSubmitted ? 'opacity-50 cursor-not-allowed' : ''
           }`}
           onClick={handleSubmit}
           disabled={isLoading || hasSubmitted}
         >
-          {isLoading ? 'Submitting...' : hasSubmitted ? 'Submitted ✓' : 'Submit'}
+          {/* {isLoading ? 'loading...' : hasSubmitted ? 'Submitted ✓' : 'Submit'} */}
+          {isLoading ? <Loader text='Loading...'/> : hasSubmitted ? 'Submitted ✓' : 'Submit' }
         </button>
         
         {serverResponse && (

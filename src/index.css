@@ -5,3 +5,13 @@ body {
   min-height: 110vh;
   margin: 0;
 }
+
+.loader{
+  animation:  rotate 3s steps(12) infinite;
+}
+
+@keyframes rotate {
+  to{
+    transform: rotate(360deg);
+  }
+}
