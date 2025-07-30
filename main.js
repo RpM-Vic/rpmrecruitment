@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import express from "express";
-import { pages } from "./server/pages.js";
+import { pages } from "./server/controller/pages.js";
+import { vanillaThreejs } from "./server/controller/public2.js";
 import cors from "cors";
 import { sendToDiscord } from './server/sendToDiscord.js';
 
@@ -9,6 +10,7 @@ const PORT = process.env.port || 4000;
 const app = express();
 
 app.use(cors(), express.json(), express.urlencoded({ extended: true }));
+app.use(vanillaThreejs);
 app.use(pages);
 
 app.post('/submit', (req, res) => {

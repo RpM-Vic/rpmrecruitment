@@ -20,7 +20,7 @@ export const Navbar = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
           <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-            RpM Oficial
+            RpM Official
           </span>
         </div>
         

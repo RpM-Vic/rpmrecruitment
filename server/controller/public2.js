@@ -5,30 +5,31 @@ import express from 'express';
 
 const __dirname=process.cwd()
 
-export const pages=Router()
+export const vanillaThreejs=Router()
 
-pages.use(express.static(path.join(__dirname,
-  'dist'), {
+vanillaThreejs.use(express.static(path.join(__dirname,
+  'public2'), {
   setHeaders: (res, path) => {
     res.setHeader('Content-Type', mime.lookup(path) || 'application/octet-stream');
   }
 }));
 
-pages.get('/home',
+vanillaThreejs.get('/home',
   async(req, res) => {
-    const filePath = path.join(__dirname, 'dist', `home.html`);
+    const filePath = path.join(__dirname, 'public2', `home.html`);
     res.sendFile(filePath) 
   }
 );
 
-pages.get('/home2',
+vanillaThreejs.get('/home2',
   async(req, res) => {
-    const filePath = path.join(__dirname, 'dist', `home2.html`);
+    const filePath = path.join(__dirname, 'public2', `home2.html`);
     res.sendFile(filePath) 
   }
 );
 
-// pages.get('*',
+// vanillaThreejs
+// .get('*',
 //   async(req, res) => {
 //     const filePath = path.join(__dirname, 'dist', `index.html`);
 //     res.sendFile(filePath) 
