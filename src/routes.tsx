@@ -23,7 +23,7 @@ export const router=createBrowserRouter([{
     element:<Session/>
   },
   {
-    path:"/SubmitTime",
+    path:"/Submittime",
     element:<SubmitTimeForm/>
   },
     {
@@ -33,3 +33,44 @@ export const router=createBrowserRouter([{
 
 ]
 }])
+
+export const router2=createBrowserRouter([  {
+    path:"/",
+    element:<Layout1/>,
+    children:[{
+      index:true,
+      element:<Home/>}
+    ]
+  },
+  {
+    path:"/dashboard",
+    element:<Layout1/>,
+    children:[{
+      index:true,
+      element:<Dashboard/>}
+    ]
+  },
+    {
+    path:"/session",
+    element:<Layout1/>,
+    children:[{
+      index:true,
+      element:<Session/>}
+    ]},
+    {
+    path:"/submittime",
+    element:<Layout1/>,
+    children:[{
+      index:true,
+      element:<SubmitTimeForm/>}
+    ]
+  },
+    {
+    path:"/joinus",
+    element:<Layout1/>,
+    children:[{
+      index:true,
+      element:<RecruitmentForm/>}
+    ]
+  },
+])

@@ -15,9 +15,9 @@ pages.use(express.static(path.join(__dirname,
 }));
 
 
-// pages.get('*',
-//   async(req, res) => {
-//     const filePath = path.join(__dirname, 'dist', `index.html`);
-//     res.sendFile(filePath) 
-//   }
-// );
+pages.get('/*foo',
+  async(req, res) => {
+    const filePath = path.join(__dirname, 'dist', `index.html`);
+    res.sendFile(filePath) 
+  }
+);
