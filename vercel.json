@@ -2,14 +2,33 @@
   "version": 2,
   "builds": [
     {
-      "src": "main.js",
+      "src": "main.js",  
       "use": "@vercel/node"
+    },
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "public2/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+
+    {
+      "src": "/(.*\\.(ico|png|jpg|jpeg|svg|css|js|html))",
+      "dest": "/public/$1"
+    },
+    
+    {
+      "src": "/public2/(.*)",
+      "dest": "/public2/$1"
+    },
+    
     {
       "src": "/(.*)",
-      "dest": "main.js" 
+      "dest": "/main.js"
     }
   ]
 }
