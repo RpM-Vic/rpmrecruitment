@@ -14,6 +14,20 @@ pages.use(express.static(path.join(__dirname,
   }
 }));
 
+pages.get('/home',
+  async(req, res) => {
+    const filePath = path.join(__dirname, 'public', `home.html`);
+    res.sendFile(filePath) 
+  }
+);
+
+pages.get('/home2',
+  async(req, res) => {
+    const filePath = path.join(__dirname, 'dist', `home2.html`);
+    res.sendFile(filePath) 
+  }
+);
+
 
 pages.get('/*foo',
   async(req, res) => {
