@@ -3,12 +3,14 @@ import express from "express";
 import { pages } from "./server/controller/pages.js";
 import cors from "cors";
 import { sendToDiscord } from './server/sendToDiscord.js';
+import { vanillaPage } from './server/controller/vanillaPage.js';
 
 const PORT = process.env.port || 4000;
 
 const app = express();
 
 app.use(cors(), express.json(), express.urlencoded({ extended: true }));
+app.use(vanillaPage)
 app.use(pages);
 
 app.post('/submit', (req, res) => {

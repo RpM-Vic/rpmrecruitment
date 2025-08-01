@@ -34,8 +34,9 @@ export const router=createBrowserRouter([{
 ]
 }])
 
-export const router2=createBrowserRouter([  {
-    path:"/",
+export const router2=createBrowserRouter([  
+  {
+    path:"/home",
     element:<Layout1/>,
     children:[{
       index:true,
@@ -50,13 +51,13 @@ export const router2=createBrowserRouter([  {
       element:<Dashboard/>}
     ]
   },
-    {
-    path:"/session",
-    element:<Layout1/>,
-    children:[{
-      index:true,
-      element:<Session/>}
-    ]},
+    // {
+    // path:"/session",
+    // element:<Layout1/>,
+    // children:[{
+    //   index:true,
+    //   element:<Session/>}
+    // ]},
     {
     path:"/submittime",
     element:<Layout1/>,

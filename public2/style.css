@@ -1,5 +1,38 @@
 @import url("https://use.typekit.net/jmk3xov.css");
 
+nav {
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #333;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.nav-container {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: yellow;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  
+}
+
+nav a:hover {
+  color: blue;
+  background-color: #555;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+
 canvas {
   position: fixed;
   top: 0;
@@ -42,13 +75,6 @@ blockquote {
   font-weight: 700;
   font-style: normal;
 }
-
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
 
 
 header {

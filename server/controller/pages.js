@@ -21,7 +21,7 @@ pages.get('/home',
   }
 );
 
-pages.get('/home2',
+pages.get('/',
   async(req, res) => {
     const filePath = path.join(__dirname, 'dist', `home2.html`);
     res.sendFile(filePath) 
