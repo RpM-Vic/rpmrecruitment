@@ -36,7 +36,7 @@ export const router=createBrowserRouter([{
 
 export const router2=createBrowserRouter([  
   {
-    path:"/home",
+    path:"/",
     element:<Layout1/>,
     children:[{
       index:true,

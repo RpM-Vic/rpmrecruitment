@@ -1,7 +1,13 @@
+import { useEffect } from "react";
+
 export const Home = () => {
-  return(
-  <div>
-    <h2>I'm planning to have a very flashy home page with cool animations and all the dificulties</h2>
-  </div>
-  )
+  useEffect(() => {
+    const hasReloaded = sessionStorage.getItem('hasReloadedHome');
+    if (!hasReloaded) {
+      sessionStorage.setItem('hasReloadedHome', 'true');
+      window.location.reload();
+    }
+  }, []);
+
+  return <div>Please reload this page</div>;
 }

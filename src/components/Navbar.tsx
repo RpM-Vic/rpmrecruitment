@@ -26,7 +26,7 @@ export const Navbar = () => {
         
         <div className="flex space-x-6">
           <NavLink 
-            to="/" 
+            to="http://localhost:4000/" 
             className={({ isActive }) => 
               `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                 isActive 
