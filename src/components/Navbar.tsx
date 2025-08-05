@@ -37,6 +37,18 @@ export const Navbar = () => {
           >
             Home
           </NavLink>
+                    <NavLink 
+            to="/leaderboard" 
+            className={({ isActive }) => 
+              `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                isActive 
+                  ? "bg-indigo-900/50 text-indigo-100 shadow-inner" 
+                  : "text-gray-300 hover:text-white hover:bg-gray-800"
+              }`
+            }
+          >
+            Leaderboard
+          </NavLink>
           <NavLink 
             to="/submitTime" 
             className={({ isActive }) => 
@@ -61,18 +73,7 @@ export const Navbar = () => {
           >
             Join us
           </NavLink>
-          <NavLink 
-            to="/leaderboard" 
-            className={({ isActive }) => 
-              `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                isActive 
-                  ? "bg-indigo-900/50 text-indigo-100 shadow-inner" 
-                  : "text-gray-300 hover:text-white hover:bg-gray-800"
-              }`
-            }
-          >
-            Leaderboard
-          </NavLink>
+
                     {/* <NavLink 
             to="/session" 
             className={({ isActive }) => 

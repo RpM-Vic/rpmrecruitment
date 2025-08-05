@@ -4,7 +4,7 @@ export const initialdata:FormData[] = [
   { question: 'Nickname', answer: '' },
   { question: 'Discord Username', answer: '' },
   { question: 'Your primary language', answer: '' },
-  { question: 'are you already in contact with a recruiter', answer: '' },
+  { question: 'Are you already in contact with a recruiter', answer: '' },
   {
     question: "What's your in game Asphalt ID",
     answer: '',

@@ -11,7 +11,7 @@ const PORT = process.env.port || 4000;
 const app = express();
 
 app.use(cors(), express.json(), express.urlencoded({ extended: true }));
-app.use('/api',forms());
+app.use('/api',forms);
 app.use(vanillaPage)
 app.use(pages);
 
