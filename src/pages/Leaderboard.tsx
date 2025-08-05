@@ -6,7 +6,7 @@ const fakeData=[
   {id:"qewr3",alias:"Pickle1",asphaltID:"u-332424",time:"63:34:56", link:"link3"},
 ]
 
-export const Dashboard = () => {
+export const Leaderboard = () => {
   const [serverData,setServerData]=useState<typeof fakeData>([])
   useEffect(()=>{
     setServerData(fakeData)
@@ -14,7 +14,7 @@ export const Dashboard = () => {
 
   return (
     <div>
-      <h2>This is the dashboard</h2>
+      <h2>This is the Leaderbord</h2>
       <table>
         <thead>
           <tr>

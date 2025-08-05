@@ -26,7 +26,7 @@ export const Navbar = () => {
         
         <div className="flex space-x-6">
           <NavLink 
-            to="http://localhost:4000/" 
+            to="/" 
             className={({ isActive }) => 
               `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                 isActive 
@@ -62,7 +62,7 @@ export const Navbar = () => {
             Join us
           </NavLink>
           <NavLink 
-            to="/dashboard" 
+            to="/leaderboard" 
             className={({ isActive }) => 
               `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                 isActive 
@@ -71,7 +71,7 @@ export const Navbar = () => {
               }`
             }
           >
-            Dashboard
+            Leaderboard
           </NavLink>
                     {/* <NavLink 
             to="/session" 
